@@ -1,0 +1,164 @@
+body {
+    background-color: black;
+}
+.left-bar{
+    height: 100%;
+    width:20vw;
+    margin: 0px;
+    position: fixed;
+    background-color: #161A30;
+}
+.photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.photo > img {
+    margin-top: 30px;
+    width: 120px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid #61677A;
+}
+
+.left-bar-title {
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: center;
+}
+.left-bar-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.left-bar-icons > svg {
+    border-radius: 15%;
+    width: 35px;
+    height: 35px;
+    padding-bottom: 12px;
+}
+.left-bar-icons > svg:hover {
+    background-color: lightblue;
+}
+.home-bar {
+    color: grey;
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 45px;
+}
+.home-bar svg {
+    padding-right: 5px;
+}
+.home-bar h3 {
+    padding-bottom: 15px;
+}
+.home-bar h3:hover {
+    color: white;
+}
+.left-bar footer {
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.top-page {
+    background-image: url(./profile-img.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+    margin-left: 20%;
+    margin-bottom: 0;
+}
+.top-page h1 {
+    padding-left: 140px;
+    color: white;
+    font-weight: bold;  
+    font-size: 75px;
+    padding-top: 200px;
+}
+.top-page h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 140px;
+    color: white;
+    font-size: 25px;
+}
+.about-page {
+    height: 80vh;
+    margin-left: 20%;
+    background-color: white;
+    padding: 30px;
+}
+.about-page > img {
+    height: 500px;
+    width: 400px;
+    float: left;
+    padding-right: 20px;
+}
+.about-page  h2 {
+    color: #3081D0;
+    font-size: 35px;
+    margin: 0;
+}
+.about-page-inside {
+    display: flex;
+    gap: 5rem;
+}
+.skills {
+    height: 40vh;
+    margin-left: 20%;
+    background-color: white;
+    padding: 35px;
+}
+.about-skills {
+    display: flex;
+    gap: 30rem;
+    padding-top: 20px;
+}
+.skills h2 {
+    color: #3081D0;
+    font-size: 35px;
+    margin: 0;
+}
+.about-skills h3 {
+    font-size: 15px;
+    margin: 0;
+}
+.skills p {
+    font-size: 18px;
+}
+.facts {
+    height: 50vh;
+    margin-left: 20%;
+    background-color: white;
+    padding: 35px;
+}
+.facts > div {
+    display: flex;
+    justify-content: space-around;
+}
+.facts h2 {
+    color: #3081D0;
+    font-size: 35px;
+    margin: 0;
+}
+.facts h3 {
+    font-size: 55px;
+    margin-bottom: 0;
+}
+.facts p {
+    padding-left: 30px;
+    font-size: 18px;
+}
+.services {
+    height: 50vh;
+    margin-left: 20%;
+    background-color: white;
+    padding: 35px;
+}
+.services h2 {
+    color: #3081D0;
+    font-size: 35px;
+    margin: 0;
+}
