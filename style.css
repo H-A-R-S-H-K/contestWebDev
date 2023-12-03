@@ -1,6 +1,15 @@
 body {
     background-color: black;
 }
+.top-bar {
+    background-color: black;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
 .left-bar{
     height: 100%;
     width:20vw;
@@ -35,13 +44,17 @@ body {
 }
 
 .left-bar-icons > svg {
-    border-radius: 15%;
+    border-radius: 20%;
     width: 35px;
     height: 35px;
-    padding-bottom: 12px;
+    fill: white;
+    margin-bottom: 12px;
+    transition: 0.3s;
 }
 .left-bar-icons > svg:hover {
-    background-color: lightblue;
+    background-color: #33BBC5;
+    transform: translateY(-3px);
+    cursor: pointer;
 }
 .home-bar {
     color: grey;
@@ -53,23 +66,36 @@ body {
 }
 .home-bar h3 {
     padding-bottom: 15px;
+    transition: 0.3s;
 }
 .home-bar h3:hover {
     color: white;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+.home-bar h3:hover >svg {
+    fill: #39A7FF;
+    transform: translateY(-1px);
+    cursor: pointer;
 }
 .left-bar footer {
     padding-top: 20px;
     text-align: center;
     color: white;
 }
-
+.pages {
+    height: 60vh;
+    margin-left: 20%;
+    margin-bottom: 0;
+    background-color: white;
+    padding: 35px;
+}
 .top-page {
     background-image: url(./profile-img.jpg);
     background-attachment: fixed;
     background-size: cover;
-    height: 100vh;
-    margin-left: 20%;
-    margin-bottom: 0;
+    padding: 0;
+    height: 90vh;
 }
 .top-page h1 {
     padding-left: 140px;
@@ -78,87 +104,242 @@ body {
     font-size: 75px;
     padding-top: 200px;
 }
-.top-page h2 {
+.top-page > h2 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-left: 140px;
     color: white;
-    font-size: 25px;
 }
 .about-page {
-    height: 80vh;
-    margin-left: 20%;
     background-color: white;
     padding: 30px;
+    height: 90vh;
 }
 .about-page > img {
+    padding-top: 50px;
     height: 500px;
     width: 400px;
     float: left;
     padding-right: 20px;
 }
-.about-page  h2 {
+.about-page-inside svg{
+    padding-right: 3px;
+    fill: lightblue;
+}
+.heading {
+    color: #3081D0;
+    font-size: 35px;
+    margin: 0;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: 2px solid #96EFFF;
+    width: 3%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.sub-heading {
+    padding-top: 50px;
     color: #3081D0;
     font-size: 35px;
     margin: 0;
 }
-.about-page-inside {
+.pages > div {
     display: flex;
     gap: 5rem;
 }
-.skills {
-    height: 40vh;
-    margin-left: 20%;
-    background-color: white;
-    padding: 35px;
-}
-.about-skills {
-    display: flex;
-    gap: 30rem;
-    padding-top: 20px;
-}
-.skills h2 {
-    color: #3081D0;
-    font-size: 35px;
-    margin: 0;
-}
-.about-skills h3 {
-    font-size: 15px;
-    margin: 0;
-}
-.skills p {
-    font-size: 18px;
-}
-.facts {
-    height: 50vh;
-    margin-left: 20%;
-    background-color: white;
-    padding: 35px;
+.facts img {
+    height: 40px;
+    width: 40px;
+    padding-right: 15px;
 }
 .facts > div {
-    display: flex;
     justify-content: space-around;
-}
-.facts h2 {
-    color: #3081D0;
-    font-size: 35px;
-    margin: 0;
 }
 .facts h3 {
     font-size: 55px;
     margin-bottom: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.facts p {
-    padding-left: 30px;
+.facts > div p {
+    padding-left: 50px;
     font-size: 18px;
 }
-.services {
-    height: 50vh;
-    margin-left: 20%;
-    background-color: white;
-    padding: 35px;
+.facts span {
+    font-weight: bold;
+    color: darkgrey;
 }
-.services h2 {
-    color: #3081D0;
-    font-size: 35px;
+.skills {
+    background-color: #EEF5FF;
+    height: 45vh;
+}
+.about-skills {
+    padding-top: 20px;
+}
+.about-skills h3 {
+    font-size: 14px;
     margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-bottom: 5px;
+}
+.skills p {
+    font-size: 18px;
+}
+.skill-bar-div {
+    height: 12px;
+    width: 500px;
+    background-color: lightblue;
+    margin-bottom: 20px;
+}
+.skill-bar-small-div {
+    height: 12px;
+    background-color: #39A7FF;
+}
+.resume {
+    height: 103vh;
+}
+.resume > div {
+    gap: 2;
+}
+.resume > div > div {
+    width: 50%;
+}
+.resume h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.cursive {
+    font-style: italic;
+}
+.capital {
+    text-transform: uppercase;
+}
+.year-div {
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px 0 5px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: #E0F4FF;
+    font-weight: 550;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.line {
+    border: 2px solid #87C4FF;
+    width: 0;
+    margin-left: 5px;
+}
+.resume h3 {
+    margin-bottom: 0;
+}
+.resume > div > div > div{
+    display: flex;
+    gap: 1.5rem;
+}
+.resume img {
+    margin-right: 10px;
+}
+.resume ul {
+    padding: 0;
+}
+.line img {
+    margin-top: 155px;
+}
+.resume li {
+    padding-bottom: 5px;
+}
+.portfolio {
+    background-color: #EEF5FF;
+    height: 120vh;
+}
+#portfolio-icons {
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    width: 250px;
+    margin-left: 380px;
+    gap: 2rem;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#portfolio-icons > span {
+    font-size: 17px;
+    padding: 0;
+}
+#portfolio-icons span:hover {
+    color: #39A7FF;
+    cursor: pointer;
+}
+#portfolio-grid {
+    display: grid;
+    gap: 10rem;
+    grid-template-columns: repeat(3,200px);
+    grid-template-rows: repeat(3,200px);
+}
+#portfolio-grid div {
+    height: 290px;
+    width: 350px;
+}
+#portfolio-grid img {
+    width: 100%;
+    height: 100%;
+}
+.contact {
+    height: 90vh;
+}
+#contact-divs {
+    display: flex;
+    gap: 2rem;
+}
+.contact-inside {
+    margin-top: 20px;
+    height: 550px;
+    background-color: white;
+    width: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.contact-inside iframe {
+    height: 200px;
+    width: 420px;
+    padding-left: 20px;
+}
+.contact-inside img {
+    height: 22px;
+    width: 25px;
+    padding-left: 8px;
+    padding-top: 8px;
+}
+.contact-inside p {
+    padding-left: 40px;
+}
+.contact-inside h3 {
+    padding-left: 20px;
+    font-weight: normal;
+}
+.contact-inside input {
+    width: 240px;
+    margin-left: 20px;
+}
+.contact-inside textarea {
+    margin-left: 20px;
+    width: 450px;
+    height: 130px;
+}
+.contact-inside button {
+    margin-top: 7%;
+    margin-left: 35%;
+    height: 40px;
+    width: 130px;
+    background-color: #39A7FF;
+    color: white;
+    border: none;
 }
